@@ -6,10 +6,12 @@ import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/contexts/language-context"
 import { publications } from "@/lib/data/profile-data"
 import { BookOpen, Download, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 export function PublicationsSection() {
   const { t, language } = useLanguage()
   const [selectedBook, setSelectedBook] = useState<number | null>(null)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     if (selectedBook !== null) {
@@ -170,9 +172,9 @@ export function PublicationsSection() {
             </button>
 
             {/* PDF Container */}
-            <div className="bg-gradient-to-br from-[#1a1612] to-[#0f0e0c] rounded-2xl border border-[#c9a961]/30 overflow-hidden shadow-2xl shadow-[#c9a961]/20 flex flex-col h-full">
+            <div className="bg-gradient-to-br from-[#1a1612] to-[#0f0e0c] rounded-2xl border border-[#c9a961]/30 overflow-hidden shadow-2xl shadow-[#c9a961]/20 flex flex-col" style={{ height: 'calc(90vh - 2rem)', maxHeight: 'calc(90vh - 2rem)' }}>
               {/* Book Info Header */}
-              <div className="p-5 md:p-6 border-b border-[#c9a961]/20 bg-[#1a1612] flex items-center justify-between">
+              <div className="p-5 md:p-6 border-b border-[#c9a961]/20 bg-[#1a1612] flex items-center justify-between shrink-0">
                 <div className="flex-1">
                   <h3 className="text-xl md:text-2xl font-bold text-[#c9a961] mb-1">
                     {t(publications.parts[selectedBook])}
@@ -200,14 +202,22 @@ export function PublicationsSection() {
               </div>
 
               {/* PDF Viewer */}
-              <div className="flex-1 overflow-auto bg-[#f5f0e6]" style={{ WebkitOverflowScrolling: 'touch' }}>
-                <iframe
-                  src={`${publications.parts[selectedBook].fileUrl}#toolbar=1&navpanes=1&scrollbar=1&zoom=page-width`}
-                  className="w-full h-full min-h-[600px] border-0"
-                  title={t(publications.parts[selectedBook])}
-                  scrolling="yes"
-                  style={{ minHeight: '600px', height: '100%' }}
-                />
+              <div className="flex-1 overflow-hidden bg-[#f5f0e6] relative" style={{ minHeight: 0 }}>
+                {isMobile ? (
+                  <embed
+                    src={`${publications.parts[selectedBook].fileUrl}#toolbar=1&navpanes=1&scrollbar=1&zoom=page-width`}
+                    type="application/pdf"
+                    className="w-full h-full"
+                    style={{ minHeight: '100%' }}
+                  />
+                ) : (
+                  <iframe
+                    src={`${publications.parts[selectedBook].fileUrl}#toolbar=1&navpanes=0&scrollbar=1&zoom=page-width`}
+                    className="absolute inset-0 w-full h-full border-0"
+                    title={t(publications.parts[selectedBook])}
+                    style={{ minHeight: '100%' }}
+                  />
+                )}
               </div>
             </div>
 
