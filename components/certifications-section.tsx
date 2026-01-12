@@ -48,6 +48,14 @@ const certificates = [
   },
   {
     id: 6,
+    title: { en: "Doctor of Philosophy", ar: "دكتوراه الفلسفة" },
+    institution: { en: "University of Washington", ar: "جامعة واشنطن" },
+    location: { en: "Seattle, Washington, USA", ar: "سياتل، واشنطن، الولايات المتحدة" },
+    year: "1979",
+    image: "/certificates/PhD-Certificate.jpg",
+  },
+  {
+    id: 7,
     title: { en: "King Abdulaziz Badge of Second Class", ar: "وسام الملك عبدالعزيز من الدرجة الثانية" },
     institution: { en: "Kingdom of Saudi Arabia", ar: "المملكة العربية السعودية" },
     location: { en: "Jeddah, Saudi Arabia", ar: "جدة، المملكة العربية السعودية" },
