@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useLanguage } from "@/lib/contexts/language-context"
 import { leadershipRoles } from "@/lib/data/profile-data"
-import { Briefcase } from "lucide-react"
+import { Briefcase, ExternalLink } from "lucide-react"
 
 export function LeadershipSection() {
   const { t, language } = useLanguage()
@@ -40,6 +40,17 @@ export function LeadershipSection() {
                     <Badge variant="outline" className="border-[#c9a961]/30 bg-[#c9a961]/5 text-[#c9a961] text-xs">
                       {role.period}
                     </Badge>
+                    {role.websiteUrl && (
+                      <a
+                        href={role.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-[#c9a961] hover:text-[#d4b76e] transition-colors text-xs font-medium mt-2"
+                      >
+                        {language === "ar" ? "عرض الموقع" : "View Website"}
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

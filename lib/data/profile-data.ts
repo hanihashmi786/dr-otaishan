@@ -11,6 +11,7 @@ export interface TimelineItem {
   }
   category: "education" | "military" | "business" | "government"
   certificateUrl?: string
+  websiteUrl?: string
 }
 
 export interface LeadershipRole {
@@ -27,6 +28,7 @@ export interface LeadershipRole {
     en: string
     ar: string
   }
+  websiteUrl?: string
 }
 
 export interface Membership {
@@ -299,14 +301,15 @@ export const timeline: TimelineItem[] = [
     year: "1992-present",
     hijriYear: "1412-الآن",
     title: {
-      en: "Al-Otaishan Engineers & Consultants",
+      en: "Abdulaziz T. Al-Otaisahan Engineering Consutling Co.",
       ar: "مكتب العطيشان مهندسون استشاريون",
     },
     description: {
-      en: "Chairman of Board of Directors and Owner of Al-Otaishan Engineers and Consultants Office",
+      en: "Chairman of Board of Directors and Owner of Abdulaziz T. Al-Otaisahan Engineering Consutling Co.",
       ar: "رئيس مجلس إدارة وصاحب مكتب العطيشان مهندسون استشاريون",
     },
     category: "business",
+    websiteUrl: "https://www.otaishan.com.sa/",
   },
   {
     year: "2006-present",
@@ -353,10 +356,11 @@ export const leadershipRoles: LeadershipRole[] = [
       ar: "رئيس مجلس الإدارة وصاحب",
     },
     organization: {
-      en: "Al-Otaishan Engineers & Consultants",
+      en: "Abdulaziz T. Al-Otaisahan Engineering Consutling Co.",
       ar: "مكتب العطيشان مهندسون استشاريون",
     },
     period: "1992 - Present",
+    websiteUrl: "https://www.otaishan.com.sa/",
   },
   {
     title: {

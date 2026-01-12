@@ -200,11 +200,13 @@ export function PublicationsSection() {
               </div>
 
               {/* PDF Viewer */}
-              <div className="flex-1 overflow-hidden bg-[#f5f0e6]">
+              <div className="flex-1 overflow-auto bg-[#f5f0e6]" style={{ WebkitOverflowScrolling: 'touch' }}>
                 <iframe
-                  src={`${publications.parts[selectedBook].fileUrl}#toolbar=1&navpanes=1&scrollbar=1`}
-                  className="w-full h-full border-0"
+                  src={`${publications.parts[selectedBook].fileUrl}#toolbar=1&navpanes=1&scrollbar=1&zoom=page-width`}
+                  className="w-full h-full min-h-[600px] border-0"
                   title={t(publications.parts[selectedBook])}
+                  scrolling="yes"
+                  style={{ minHeight: '600px', height: '100%' }}
                 />
               </div>
             </div>

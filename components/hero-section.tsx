@@ -68,7 +68,7 @@ export function HeroSection() {
                     {/* Inner Dark Border */}
                     <div className="p-3 rounded-full bg-gradient-to-br from-[#1a1612] via-[#1a1612] to-[#1a1612]">
                       {/* Image Container with subtle inner glow */}
-                      <div className="relative w-[400px] h-[400px] rounded-full overflow-hidden border-4 border-[#c9a961]/20 shadow-inner">
+                      <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden border-4 border-[#c9a961]/20 shadow-inner">
                         <Image
                           src="/images/image.png"
                           alt={t(profileInfo.name)}
