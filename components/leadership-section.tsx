@@ -41,15 +41,17 @@ export function LeadershipSection() {
                       {role.period}
                     </Badge>
                     {role.websiteUrl && (
-                      <a
-                        href={role.websiteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-[#c9a961] hover:text-[#d4b76e] transition-colors text-xs font-medium mt-2"
-                      >
-                        {language === "ar" ? "عرض الموقع" : "View Website"}
-                        <ExternalLink className="h-3 w-3" />
-                      </a>
+                      <div className="pt-4">
+                        <a
+                          href={role.websiteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-[#c9a961] hover:text-[#d4b76e] transition-colors text-xs font-medium"
+                        >
+                          {language === "ar" ? "عرض الموقع" : "View Website"}
+                          <ExternalLink className="h-3 w-3" />
+                        </a>
+                      </div>
                     )}
                   </div>
                 </div>

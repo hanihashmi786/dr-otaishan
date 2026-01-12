@@ -75,15 +75,17 @@ export function TimelineSection() {
                           </h3>
                           <p className="text-[#b8a685] text-pretty leading-relaxed">{t(item.description)}</p>
                           {item.websiteUrl && (
-                            <a
-                              href={item.websiteUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-[#c9a961] hover:text-[#d4b76e] transition-colors text-sm font-medium mt-2"
-                            >
-                              {language === "ar" ? "عرض الموقع" : "View Website"}
-                              <ExternalLink className="h-4 w-4" />
-                            </a>
+                            <div className="pt-4">
+                              <a
+                                href={item.websiteUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-[#c9a961] hover:text-[#d4b76e] transition-colors text-sm font-medium"
+                              >
+                                {language === "ar" ? "عرض الموقع" : "View Website"}
+                                <ExternalLink className="h-4 w-4" />
+                              </a>
+                            </div>
                           )}
                         </div>
                       </Card>

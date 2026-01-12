@@ -301,11 +301,11 @@ export const timeline: TimelineItem[] = [
     year: "1992-present",
     hijriYear: "1412-الآن",
     title: {
-      en: "Abdulaziz T. Al-Otaisahan Engineering Consutling Co.",
+      en: "Abdulaziz T. Al-Otaishan Engineering Consutling Co.",
       ar: "مكتب العطيشان مهندسون استشاريون",
     },
     description: {
-      en: "Chairman of Board of Directors and Owner of Abdulaziz T. Al-Otaisahan Engineering Consutling Co.",
+      en: "Chairman of Board of Directors and Owner of Abdulaziz T. Al-Otaishan Engineering Consutling Co.",
       ar: "رئيس مجلس إدارة وصاحب مكتب العطيشان مهندسون استشاريون",
     },
     category: "business",
